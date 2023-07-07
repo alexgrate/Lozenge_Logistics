@@ -1,0 +1,72 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+    <div class="about-main">
+        <section class="main-about">
+            <div class="main-about-container">
+                <div class="main-about-box">
+                    <div class="main-about-content">
+                            <h2>About Us</h2>
+                            <p>At Lozenge Cargo, we are dedicated to providing exceptional logistics solutions to meet the unique needs of our clients.Our mission is to provide reliable, efficient, and cost-effective logistics services that help our clients grow their businesses. We understand that the supply chain is a complex process, and that's why we offer a range of services to support every stage of the logistics journey.</p>
+                    </div>
+    
+                    <div class="main-about-image">
+                            <img src="{% static 'images/transport.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="service reveal">
+            <div class="box-container">
+
+                <div class="box">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Export Service</h3>
+                    <p>With thousands of Nigerians using our export service to ship food items, fashion items, gift items, Arts etc to other countries</p>
+                </div>
+    
+                <div class="box">
+                    <i class="fas fa-globe"></i>
+                    <h3>Pickup service to your doorstep Worldwide</h3>
+                    <p>Pickup your items from any global location to your doorstep in Nigeria (Office pickup is also available). Our express Pickup Service ensure your items are delivered to you in 3-5 working days.</p>
+                </div>
+    
+    
+            </div>
+
+        </section> 
+
+        <section class="whatwedo reveal">
+            <div class="whatwedo-container">
+                <div class="whatwedo-box">
+                    <div class="whatwedo-content">
+                        <div>
+                            <h2>What we do</h2>
+                            <div>
+                                <h3>Express Shipping</h3>
+                                <p>We send out packages everyday except weekends from our lagos office to anywhere in the world.Our rates are affordable and our delivery is within 3-5 working days.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="whatwedo-content">
+                        <div>
+                            <h3>Standard Air Shipping</h3>
+                            <p>We Ship items once a week on this type of shipping service with delivery within 5-10 working days.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="whatwedo-box">
+                    <h2>WHY CHOOSE US</h2>
+                    <h1>Why use Lozenge Cargo?</h1>
+                    <p><i class="fas fa-circle"></i> Shipments are fully insured with us.</p>
+                    <p><i class="fas fa-circle"></i> We provide hassle-free delivery to your doorstep.</p>
+                    <p><i class="fas fa-circle"></i> Fragile items are handled and packaged with the utmost care.</p>
+                    <p><i class="fas fa-circle"></i> Stay up-to-date with timely email and text message alerts.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock content %}

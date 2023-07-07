@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %} 
+    <section class="quote-main">
+        <div class="quote-container">
+            <div>
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="quote-alert">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <h1 class="quote-h1">Lozenge Quote</h1>
+            <form class="quote-form" method="POST" action="">
+                {% csrf_token %}
+                <div class="quote-form-group">
+                    {{ form.Origin.label }}
+                    {% if form.Origin.errors %}
+                    {{ form.Origin }}
+                        {% for error in form.Origin.errors%}
+                            {{ error }}
+                        {% endfor %}
+                    {% else %}
+                        {{ form.Origin }}
+                    {% endif %}
+                </div>
+                <div class="quote-form-group">
+                    {{ form.Destination.label }}
+                    {% if form.Destination.errors %}
+                    {{ form.Destination }}
+                        {% for error in form.Destination.errors%}
+                            {{ error }}
+                        {% endfor %}
+                    {% else %}
+                        {{ form.Destination }}
+                    {% endif %}
+                </div>
+                <div class="quote-form-group">
+                    {{ form.Estimated_Weight.label }}
+                    {% if form.Estimated_Weight.errors %}
+                    {{ form.Estimated_Weight }}
+                        {% for error in form.Estimated_Weight.errors%}
+                            {{ error }}
+                        {% endfor %}
+                    {% else %}
+                        {{ form.Estimated_Weight }}
+                    {% endif %}
+                </div>
+                <div class="quote-form-group">
+                    {{ form.Email.label }}
+                    {% if form.Email.errors %}
+                    {{ form.Email }}
+                        {% for error in form.Email.errors%}
+                            {{ error }}
+                        {% endfor %}
+                    {% else %}
+                        {{ form.Email }}
+                    {% endif %}
+                </div>
+                <div class="quote-form-group">
+                    {{ form.Phone.label }}
+                    {% if form.Phone.errors %}
+                    {{ form.Phone }}
+                        {% for error in form.Phone.errors%}
+                            {{ error }}
+                        {% endfor %}
+                    {% else %}
+                        {{ form.Phone }}
+                    {% endif %}
+                </div>
+                <button class="quote-button" type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+{% endblock content %}

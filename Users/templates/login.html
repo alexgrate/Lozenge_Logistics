@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+    {% block content %}
+            <div class="body">
+                <div class="container">
+                    <div> 
+                        {% if messages %}
+                            {% for message in messages %}
+                                <p class="alert"> 
+                                    {{ message }}
+                                </p>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    <div class="wrapper">
+                        <div class="title">
+                            <span>Log In</span>
+                        </div>
+                        <form method="POST" action="">
+                            {% csrf_token %}
+                            <div class="row">
+                                {{ form.as_p }}
+                            </div>
+                            <div class="pass"><a href="{% url 'password_reset' %}">Forgot Password?</a></div>
+                            <div class="row button">
+                                <button class="btn btn-outline-info">Sign In</button>
+                            </div>
+                            <div class="signup-link">Need An Account? <a href="{% url 'register' %}">Sign Up</a></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    {% endblock content %}

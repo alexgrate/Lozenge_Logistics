@@ -1,0 +1,337 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %} 
+    <section class="booking-main">
+        <h3>EXPORT DECLARATION FORM</h3>
+        <p>
+            Lozenge logistics operates in strict accordance with all government regulations and does not tolerate the export of any <span>illegal or prohibited items.</span> Those who attempt to do so risk facing criminal charges, including fines and imprisonment. If you're unsure whether an item is permitted for export, please check with our staff before shipping it.
+        </p>
+        <p>Please read and answer all fields correctly.</p>
+        <div>
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="flash">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <p class="title">Select Shipping Option (select 1 only) <span>*</span></p>
+        <form method="POST" action="" class="form">
+            {% csrf_token %}
+                <div class="column">
+                    <div class="row">
+                        {{ form.Shipping_opt.label }}
+                        {% if form.Shipping_opt.errors %}
+                            {{ form.Shipping_opt }}
+                            <div class="small">
+                                {% for error in form.Shipping_opt.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.Shipping_opt }}
+                        {% endif %}
+                    </div>
+                </div>
+                <p class="alert">This field is required</p>
+                <div class="info">
+                    <div class="sender">
+                        <p class="title-01">Sender's Details</p>
+                        <p class="alert">Please fill your details here. All fields marked * must be filled</p>
+                        <p class="title">Sender's name <span>*</span></p>
+                        <div class="input-fields"> 
+                            <div>
+                                {{ form.Sender_Fname.label }}
+                                {% if form.Sender_Fname.errors %}
+                                    {{ form.Sender_Fname }}
+                                    <div class="small">
+                                        {% for error in form.Sender_Fname.errors %}
+                                            {{ error }}
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.Sender_Fname }}
+                                {% endif %}
+                            </div>
+                            <div>
+                                {{ form.Sender_Lname.label }}
+                                {% if form.Sender_Lname.errors %}
+                                    {{ form.Sender_Lname }}
+                                    <div class="small">
+                                        {% for error in form.Sender_Lname.errors %}
+                                            {{ error }}
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.Sender_Lname }}
+                                {% endif %}
+                            </div>
+                        </div>
+                        <p class="title">Sender's Address<span>*</span></p>
+                        <div class="input-fields block">
+                            <!-- {{ form.Sender_Address.label }} -->
+                            {% if form.Sender_Address.errors %}
+                                {{ form.Sender_Address }}
+                                <div class="small">
+                                    {% for error in form.Sender_Address.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.Sender_Address }}
+                            {% endif %}                            
+                        </div>
+                        <p class="title">Senders Phone number<span>*</span></p>
+                        <div class="input-fields block">
+                            <!-- {{ form.Sender_Phone.label }} -->
+                            {% if form.Sender_Phone.errors %}
+                                {{ form.Sender_Phone }}
+                                <div class="small">
+                                    {% for error in form.Sender_Phone.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.Sender_Phone }} 
+                            {% endif %}
+                        </div>
+                        <p class="title">Sender's Email<span>*</span></p>
+                        <div class="input-fields block">
+                            <!-- {{ form.Sender_Email.label }} -->
+                            {% if form.Sender_Email.errors %}
+                                {{ form.Sender_Email }}
+                                <div class="small">
+                                    {% for error in form.Sender_Email.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.Sender_Email }}
+                            {% endif %}
+                        </div>
+                    </div>
+                        <div>
+                            <p class="title-01">Receiver's Details</p>
+                            <p class="alert">Please fill the receivers details here. All fields marked * must be filled</p>
+                            <p class="title">Receiver's Name<span>*</span></p>
+                            <div class="input-fields">
+                                <div>
+                                    <!-- {{ form.Reciever_Fname.label }} -->
+                                    {% if form.Reciever_Fname.errors %}
+                                        {{ form.Reciever_Fname }}
+                                        <div class="small">
+                                            {% for error in form.Reciever_Fname.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.Reciever_Fname }}
+                                    {% endif %}
+                                </div>
+                                <div>
+                                    <!-- {{ form.Reciever_Lname.label }} -->
+                                    {% if form.Reciever_Lname.errors %}
+                                        {{ form.Reciever_Lname }}
+                                        <div class="small">
+                                            {% for error in form.Reciever_Lname.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.Reciever_Lname }}
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <p class="title">Receiver's Phone Number<span>*</span></p>
+                        <div class="input-fields block">
+                           <!-- {{ form.Reciever_Phone.label }} -->
+                           {% if form.Reciever_Phone.errors %}
+                                {{ form.Reciever_Phone }}
+                                <div class="small">
+                                    {% for error in form.Reciever_Phone.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.Reciever_Phone }} 
+                            {% endif %}
+                        </div>
+                        <p class="title">Receiver's Email<span>*</span></p>
+                        <div class="input-fields block">
+                            <!-- {{ form.Reciever_Email.label }} -->
+                            {% if form.Reciever_Email.errors %}
+                                {{ form.Reciever_Email }}
+                                <div class="small">
+                                    {% for error in form.Reciever_Email.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.Reciever_Email }}
+                            {% endif %}
+                        </div>
+                        <p class="title">Receiver's Address<span>*</span></p>
+                        <div class="input-fields block">
+                            <!-- {{ form.Reciever_Address.label }} -->
+                            {% if form.Reciever_Address.errors %}
+                                {{ form.Reciever_Address }}
+                                <div class="small">
+                                    {% for error in form.Reciever_Address.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.Reciever_Address }}
+                            {% endif %}
+                        </div>
+                        <span class="info">Address Line</span>
+                        <div class="input-fields location">
+                                <!-- {{ form.Reciever_City.label }} -->
+                                {% if form.Reciever_City.errors %}
+                                    {{ form.Reciever_City }}
+                                    <div class="small">
+                                        {% for error in form.Reciever_City.errors %}
+                                            {{ error }}
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.Reciever_City }}
+                                {% endif %}
+                            <span class="info">City</span>
+                                    <!-- {{ form.Reciever_State.label }} -->
+                                    {% if form.Reciever_State.errors %}
+                                    {{ form.Reciever_State }}
+                                    <div class="small">
+                                        {% for error in form.Reciever_State.errors %}
+                                            {{ error }}
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.Reciever_State }}
+                                {% endif %}
+                            <span class="info">State / Province / Region</span>
+                        </div>
+                        <div class="input-fields location">
+                            <!-- {{ form.Reciever_Countries.label }} -->
+                            {% if form.Reciever_Countries.errors %}
+                                {{ form.Reciever_Countries }}
+                                <div class="small">
+                                    {% for error in form.Reciever_Countries.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.Reciever_Countries }}
+                            {% endif %}
+                        </div>
+                        <div class="input-fields text-area">
+                            <p class="title">Products List<span>*</span></p>
+                            <!-- {{ form.Product_List.label }} -->
+                            {% if form.Product_List.errors %}
+                                {{ form.Product_List }}
+                                <div class="small">
+                                    {% for error in form.Product_List.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.Product_List }}
+                            {% endif %}
+                        </div>
+                        <span class="info">Please provide a list of the products you will be exporting, with one item per line. For each item, please include the name of the item, the quantity you will be exporting, and the unit price of the item. For example:Item: Wigs Quantity: 40 packs Unit Price: 400,000</span>
+                        <p class="title">Check these boxes<span>*</span></p>
+                        <div class="checkbox">
+                            {% if form.Checkbox01.errors %}
+                                {{ form.Checkbox01 }}
+                                <div class="small">
+                                    {% for error in form.Checkbox01.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.Checkbox01 }}
+                            {% endif %}
+                            {{ form.Checkbox01.label }}
+                        </div>
+                        <div class="checkbox">
+                            {% if form.Checkbox02.errors %}
+                                {{ form.Checkbox02 }}
+                                <div class="small">
+                                    {% for error in form.Checkbox02.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.Checkbox02 }}
+                            {% endif %}
+                            {{ form.Checkbox02.label }}
+                        </div>
+                        <div class="checkbox">
+                            {% if form.Checkbox03.errors %}
+                                {{ form.Checkbox03 }}
+                                <div class="small">
+                                    {% for error in form.Checkbox03.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.Checkbox03 }}
+                            {% endif %}
+                            {{ form.Checkbox03.label }}
+                        </div>
+                        <div class="checkbox">
+                            {% if form.Checkbox04.errors %}
+                                {{ form.Checkbox04 }}
+                                <div class="small">
+                                    {% for error in form.Checkbox04.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.Checkbox04 }}
+                            {% endif %}
+                            {{ form.Checkbox04.label }}
+                        </div>
+                        <div class="checkbox">
+                            {% if form.Checkbox05.errors %}
+                                {{ form.Checkbox05 }}
+                                <div class="small">
+                                    {% for error in form.Checkbox05.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.Checkbox05 }}
+                            {% endif %}
+                            {{ form.Checkbox05.label }}
+                        </div>
+                        <div class="list">
+                            <ol>
+                                <li>At Lozenge Logistics, we take care of all your package and documentation needs and deliver your shipment to UPS or DHL on your behalf. Shipments depart every business day, so you can trust us to get your package to its destination quickly and efficiently. Once your package reaches its destination, either DHL or UPS will inform you of any duty or local charges that may need to be paid. You can then pay for these charges directly through the same carrier. With Lozenge Logistics, you can rest assured that your shipment will be taken care of from start to finish.</li>
+                                <li>Once the shipping fees have been paid, they are non-refundable and cannot be credited, even if the goods are returned due to any regulation or at the discretion of any relevant authority. Lozenge Logistics will not be liable for any refund of costs to the customer..</li>
+                                <li>
+                                    The delivery timeline for your order is estimated to be between 5 to 10 working days. However, please note that the time of delivery is not considered critical until the items are reported as missing. Therefore, we do not commit to a specific time for completing the carriage, and we do not guarantee pick-ups, transportation and delivery on a specific date or time. Please be aware that we cannot be held liable for any failure to meet such commitments or any consequences that may arise from them.
+                                </li>
+                                <li> It is important for the recipient of a shipment to inspect the contents of the delivery upon receipt and make a note of any damage, shortage or other complaints on the delivery receipt. Failure to register any complaints at the time of delivery will result in a waiver of the right to make any claim regarding such issues.</li>
+                            </ol>
+                        </div>
+                        <p class="title">Insurance<span>*</span></p>
+                       <div class="checkbox">
+                        <!-- {{ form.Insurance_opt.label }} -->
+                        {% if form.Insurance_opt.errors %}
+                            {{ form.Insurance_opt }}
+                            <div class="small">
+                                {% for error in form.Insurance_opt.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.Insurance_opt }}
+                        {% endif %}
+                        </div>
+                </div>
+                <div class="submitbtn">
+                    <button id="bookings-submit" type="submit">SUBMIT</button>
+                </div>
+        </form>
+    </section>
+{% endblock content %}

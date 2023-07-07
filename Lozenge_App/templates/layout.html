@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Lozenge Limited">
+    <meta name="description" content="Official Page Of Lozenge-Cargo">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    
+    {% if templates ==  'register.html' or 'login.html' %}
+        <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+        <link rel="stylesheet" href="{% static 'CSS/register_login.css' %}">
+    {% else %}
+        <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+    {% endif %}
+    
+    {% if templates == 'login.html' %}
+        <title>SignIn - International Shipping Company</title>
+    {% else %}
+        {% if title %}
+            <title>{{ title }} - International Shipping Company</title>
+        {% else %}
+            <title>International Shipping Company</title>
+        {% endif %}
+    {% endif %}
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'images/img1.png' %}" alt="">
+        </div>
+            
+            
+            <div class="fa fa-bars" id="menu-bar"></div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a class="active" href="{% url 'Lozenge-home' %}">Home</a></li>
+                <li><a href="{% url 'Lozenge-aboutUs' %}">About Us</a></li>
+                <li><a href="{% url 'Lozenge-services' %}">Services</a></li>
+                <li><a href="{% url 'Lozenge-contact' %}">Contact</a></li>
+                <li><a href="{% url 'Lozenge-FAQ' %}">FAQ</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'Lozenge-bookings' %}">Booking</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}" class="header_user"><i class="fas fa-user"></i>Sign In</a></li>
+                    <li><a href="{% url 'register' %}">Register</a></li>    
+                {% endif %}
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+
+        {% endblock content %}
+
+        <section class="Scontainer reveal">
+            <p>TESTIMONIALS</p>
+            <h2>Customer Feedback That Inspires Us</h2>
+            <div class="slide-container active">
+                <div class="slide">
+                    <div class="slide-content">
+                        <i class="fa fa-quote-left slide-quote"></i>
+                        <h3>Thanks for going out of your way to make us trust your company,thanks for all your support. Your delivery is fast. Keep up the good work!</h3>
+                        <p> Hair.by.coy</p>
+                        <small>Customer</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-container">
+                <div class="slide">
+                    <div class="slide-content">
+                        <i class="fa fa-quote-left slide-quote"></i>
+                        <h3>Tested and Trusted</h3>
+                        <p>Morufat</p>
+                        <small>Customer</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-container">
+                <div class="slide">
+                    <div class="slide-content">
+                        <i class="fa fa-quote-left slide-quote"></i>
+                        <h3>Quick and efficient</h3>
+                        <p>Margaret</p>
+                        <small>Customer</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-container">
+                <div class="slide">
+                    <div class="slide-content">
+                        <i class="fa fa-quote-left slide-quote"></i>
+                        <h3>Tested and Trusted. Thank you for the great services</h3>
+                        <p>Yomininuadeleke</p>
+                        <small>Customer</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-container">
+                <div class="slide">
+                    <div class="slide-content">
+                        <i class="fa fa-quote-left slide-quote"></i>
+                        <h3>Prompt and efficient</h3>
+                        <p>Victor</p>
+                        <small>Customer</small>
+                    </div>
+                </div>
+            </div>
+
+            <div id="prev" class="fa fa-arrow-left" onclick="prev()"></div>
+            <div id="next" class="fa fa-arrow-right" onclick="next()"></div>
+        </section>
+    </main>
+
+    <footer class="footer reveal">
+        <div class="box-container">
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="">Home</a>
+                <a href="">Services</a>
+                <a href="">About Us</a>
+                <a href="">FAQ</a>
+                <a href="">Contact</a>
+            </div>
+
+            <div class="box">
+                <h3>Community</h3>
+                <a href="">Documentation</a>
+                <a href="">Our Services</a>
+                <a href="">Company</a>
+            </div>
+
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="">facebook</a>
+                <a href="">whatsapp</a>
+                <a href="">instagram</a>
+            </div>
+
+            <div class="credit">Lozenge Cargo | All Rights Reserved.</div>
+        </div>
+    </footer>
+    <script src="{% static 'JS/script.js' %}"></script>
+</body>
+</html>

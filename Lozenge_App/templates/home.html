@@ -1,0 +1,80 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+    <div class="home_main">
+        <section id="main-home">
+            <section class="landing_page">
+                <div class="landing_page_container">
+                    <h2>Ship Packages <br> Around the World</h2>
+                    <div class="landing_page_btn">
+                        <a href="{% url 'Lozenge-quoteforms' %}">GET A QUOTE</a>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="about reveal">
+                <div class="about_container">
+                    <div class="about_wrapper">
+                        <div class="about_content _img">
+                            <img src="{% static 'images/about.jpg' %}" alt="">
+                        </div>
+                        <div class="about_content _writeup">
+                            <h3>Ship Anything Around the World</h3>
+                            <p>Welcome to our web page! At Lozenge Cargo, we specialize in providing global logistics solutions that can transport anything from anywhere to anywhere in the world.</p>
+                            <p> We understand that every shipment is unique, and that's why we offer a range of shipping options to meet your specific needs</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="freight reveal">
+                <div class="freight_container">
+                    <div class="freight_wrapper">
+                        <div class="freight_content writeups_">
+                            <h4>We Provide Safe & <br> Secure Shipping <br> Services around <br> the world</h4>
+                        </div>
+    
+                        <div class="freight_content freights">
+                            <h4>Air Freight</h4>
+                            <p>At Lozenge Cargo, we understand the importance of air freight in the global supply chain. That's why we offer a range of air freight services to meet your business's unique needs. <br> <br>
+                            If you need to transport goods quickly and efficiently, our air freight services can provide fast and reliable transportation. We work with a network of airlines to ensure that your goods arrive at their destination on time and in good condition.</p>
+                            <i class="fa fa-plane"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="statistical reveal">
+                <div class="statistical_container">
+                    <div class="statistical_wrapper">
+                        <div class="statistical_content">
+                            <h4 class="h4">Lozenge Statistical growth</h4>
+                            <p class="p">At Lozenge, we specialize in helping businesses <br> understand and leverage their data to drive <br> growth and improve performance.</p>
+                        </div>
+                        <div class="statistical_content">
+                            <div class="statistical_inner_content">
+                                <div class="statistical_writups">
+                                    <h4>490</h4>
+                                    <p>Satisfied <br>Clients</p>
+                                </div>
+    
+                            </div>
+    
+                            <div class="statistical_inner_content">
+                                <div class="statistical_writups">
+                                    <h4>510</h4>
+                                    <p>Shipments <br>Completed</p>
+                                </div>
+    
+                                <div class="statistical_writups">
+                                    <h4>100%</h4>
+                                    <p>Safe <br>Shipping</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>   
+        </section>
+    </div>
+{% endblock content %}

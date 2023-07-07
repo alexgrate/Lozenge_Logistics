@@ -1,0 +1,89 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+            <section class="main-services-company">
+                <h1>Lozenge shipping company</h1>
+                <div class="main-services-company-container">
+                    <div class="main-services-company-box">
+                        <div class="main-services-company-img">
+                            <img src="{% static 'images/services.png' %}" alt="">
+                        </div>
+                        <div class="main-services-company-content">
+                            <span>Pick-Up Service</span> <br>
+                            <span>Door to Door delivery</span>
+                            <p>Customers in Nigeria can also initiate pickup anywhere in the world and get their items delivered to them in 3 to 5 working days after the pick-up has been scheduled</p>
+                            <a class="btn" href="">GET IN TOUCH</a>
+                        </div>
+                    </div>
+                </div>
+            </section> 
+
+            <section class="Booking_Tuto reveal">
+                    <div class="Booking_wrapper">
+                        <div class="Booking_container">
+
+                            <div class="box">
+                                <i>1</i>
+                                <p>Send us the type of item, weight, value and dimensions</p>
+                            </div>
+                
+                            <div class="box">
+                                <i>2</i>
+                                <p>You will receive a quote within just a few minutes.</p>
+                            </div>
+                
+                            <div class="box">
+                                <i>3</i>
+                                <p>Payment for your pickup is based on the quotation we provide.</p>
+                            </div>
+
+                            <div class="box">
+                                <i>4</i>
+                                <p>Detailed address, contact name and number of Sender and Receiver should be sent to us.</p>
+                            </div>
+                
+                        </div>
+                    </div>
+            </section>
+
+            <section class="shipping-duty reveal">
+                <h1>Please note that for our Express Shipments<span>(DHL, UPS, ARAMEX, FEDEX),</span> Reciever may or may not be charged custom duty depending on value declared</h1>
+                <div class="shipping-wrapper">
+                    <div class="shipping-container">
+
+                        <div class="box">
+                            <h3>Express Shipping<i class="fa fa-check-circle"></i></h3>
+                            <div class="shipping-box">
+                                <div class="shipping-img">
+                                    <p>DHL</p>
+                                    <img src="{% static 'images/DHL.png' %}" alt="" width="60" height="20">
+                                </div>
+                                <div class="shipping-img">
+                                    <p>UPS</p>
+                                    <img src="{% static 'images/UPS.png' %}" alt="" width="30" height="30">
+                                </div>
+                               <div class="shipping-img">
+                                    <p>ARAMEX</p>
+                                    <img src="{% static 'images/ARAMEX.png' %}" alt="" width="60" height="30">
+                                </div>
+                                <div class="shipping-img">
+                                    <p>FEDEX</p>
+                                    <img src="{% static 'images/FEDEX.png' %}" alt="" width="60" height="30">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <h3>Consolidated Shipping<i class="fa fa-check-circle"></i></h3>
+                            <p>We Ship items once a week on this type pf shipping service with delivery within 5-10 working days.</p>
+                        </div>
+
+                        <div class="box">
+                            <h3>Export <i class="fas fa-check-circle"></i> </h3>
+                            <p>All our Export Shipments are to the doorstep of reciever. Express shipping within 3-5 working days and our consolidated cargo within 7-10 working days</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+{% endblock content %}

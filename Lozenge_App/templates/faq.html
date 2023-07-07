@@ -1,0 +1,214 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %} 
+    <div class="faq-main">
+        <section id="faq-head">
+            <h1 class="questions-title">Frequently Ask Questions</h1>
+            
+            <div class="questions-container">
+                <div class="questions-box">
+                    <div class="questions-content">
+                        <div class="questions">
+                            <button>
+                                <span>How do you handle unexpected delays or issues during transportation?</span>
+                                <i class="fas fa-plus plus"></i>
+                            </button>
+                            <p>We have a team of logistics experts who are available 24/7 to handle any unexpected delays or issues that may arise during transportation. We work quickly to resolve any issues and keep you informed throughout the process.</p>
+                        </div>
+
+                        <div class="questions">
+                            <button>
+                                <span>How do I get a quote for your services?</span>
+                                <i class="fas fa-plus plus"></i>
+                            </button>
+                            <p>You can request a quote by contacting us directly through our website or by phone. Our team of logistics experts will work with you to understand your needs and provide a customized quote for our services.</p>
+                        </div>
+
+                        <div class="questions">
+                            <button>
+                                <span> How do I pay?</span>
+                                <i class="fas fa-plus plus"></i>
+                            </button>
+                            <p>Please pay to our bank details below:
+                                <br>
+                                Account number: <span>null</span>  
+                                <br>
+                                Account name: <span>null</span>
+                                <br>
+                                Bank name: <span>null</span>
+                                
+                                 <br>
+                                
+                                 <br>
+                                <span>We do not accept cash or cash on delivery. Payment validates ship-out.</span></p>
+                        </div>
+
+                        <div class="questions">
+                            <button>
+                                <span>When do I receive my shipment?</span>
+                                <i class="fas fa-plus plus"></i>
+                            </button>
+                            <p>The shipping timeline for standard shipping from US, UK, and China is 9-12 working days. Air Priority is 3-5 working days (for both import and export express service). The shipping timeline for battery items from China is 3 weeks to 1 month</p>
+                        </div>
+
+                        <div class="questions">
+                            <button>
+                                <span>What documents are required to ship my items?</span>
+                                <i class="fas fa-plus plus"></i>
+                            </button>
+                            <p>Purchase invoices for items ordered in online stores. For export items such as Dried fish, crayfish, dried snails, and dried leaves require a phytosanitary certificate to ship. We process this at ₦5000 per shipment.</p>
+                        </div>
+
+                        <div class="questions">
+                            <button>
+                                <span>Can I get a quote before shipping my items?</span>
+                                <i class="fas fa-plus plus"></i>
+                            </button>
+                            <p>Yes, you can request a quotation before shipping your items. Please chat with our <a class="question-contact" href="https://wa.me/+2347033090259"> customer support by clicking here</a></p>
+                        </div>
+
+                        <div class="questions">
+                            <button>
+                                <span>Are there any hidden charges?</span>
+                                <i class="fas fa-plus plus"></i>
+                            </button>
+                            <p>No hidden charges!!!</p>
+                        </div>
+
+                        <div class="questions">
+                            <button>
+                                <span>What items are prohibited using DHL priority?</span>
+                                <i class="fas fa-plus plus"></i>
+                            </button>
+                            <p>Items such as <span>firearms, weapons, medication and drugs, animal hides and skin(ponmo), pets, pork, beef, plant, and seed, copyright and trademark items, biological specimens, processed products containing chicken.</span></p>
+                        </div>
+
+                        <div class="questions">
+                            <button>
+                                <span>Are my items safe in your warehouse?</span>
+                                <i class="fas fa-plus plus"></i>
+                            </button>
+                            <p>Yes, your items are safe in our warehouse. Our office is pest-free and fully secured.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="questions-content">
+                        <div class="questions">
+                            <button>
+                                <span>Can I ship with you to Nigeria or from Nigeria if I am not based in Nigeria?</span>
+                                <i class="fas fa-plus plus"></i>
+                            </button>
+                            <p>Yes, we can. We will handle all shipping, clearing, and delivery to your doorstep or your loved ones without worries.</p>
+                        </div>
+
+                        <div class="questions">
+                            <button>
+                                <span>How do you ensure the safety and security of my goods during transportation?</span>
+                                <i class="fas fa-plus plus"></i>
+                            </button>
+                            <p>We use advanced security measures to ensure the safety and security of your goods during transportation. This includes GPS tracking, real-time monitoring, and strict security protocols.</p>
+                        </div>
+
+                        <div class="questions">
+                            <button>
+                                <span>What countries do you ship to</span>
+                                <i class="fas fa-plus plus"></i>
+                            </button>
+                            <p>We ship to over 230 countries</p>
+                        </div>
+
+                        <div class="questions">
+                            <button>
+                                <span>Can I send a dispatch rider to deliver my items for export?</span>
+                                <i class="fas fa-plus plus"></i>
+                            </button>
+                            <p>Yes, you can send a courier or a dispatch rider to our office. Please request for an export declaration form before and come with a valid means of ID</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact reveal">
+            <div class="contact-form">
+                <h3>CONTACT US</h3>
+                <h1>Drop Us a Line</h1>
+                <div class="contact-box">
+                    <div class="contact-container">
+                        <div class="contact-content">
+                            <form method="POST" action="">
+                                {% csrf_token %}
+                                <fieldset>
+                                    <legend>Have further enquiries. Please fill this form</legend>
+                                    
+                                    {% if form.first_name.errors %}
+                                        {{ form.first_name }}
+                                            <div>
+                                                {% for error in form.first_name.errors %}
+                                                    {{ error }}
+                                                {% endfor %}
+                                            </div>
+                                    {% else %}
+                                        {{ form.first_name }}
+                                    {% endif %}
+
+                                    {% if form.last_name.errors %}
+                                        {{ form.last_name }}
+                                            <div>
+                                                {% for error in form.last_name.errors %}
+                                                    {{ error }}
+                                                {% endfor %}
+                                            </div>
+                                    {% else %}
+                                        {{ form.last_name }}
+                                    {% endif %}
+
+                                    {% if form.email.errors %}
+                                        {{ form.email }}
+                                            <div>
+                                                {% for error in form.email.errors %}
+                                                    {{ error }}
+                                                {% endfor %}
+                                            </div>
+                                    {% else %}
+                                        {{ form.email }}
+                                    {% endif %}
+
+                                    {% if form.phone_number.errors %}
+                                        {{ form.phone_number }}
+                                            <div>
+                                                {% for error in form.phone_number.errors %}
+                                                    {{ error }}
+                                                {% endfor %}
+                                            </div>
+                                    {% else %}
+                                        {{ form.phone_number }}
+                                    {% endif %}
+
+                                    {% if form.message.errors %}
+                                        {{ form.message }}
+                                            <div>
+                                                {% for error in form.message.errors %}
+                                                        {{ error }}
+                                                {% endfor %}
+                                            </div>
+                                    {% else %}
+                                        {{ form.message }}
+                                    {% endif %}
+                                </fieldset>
+                                <button type="submit" class="contact-submitbtn">SEND MESSAGE</button>
+                            </form>
+                            <div>
+                                {% if messages %}
+                                    {% for message in messages %}
+                                            <p class="faq-alert">{{ message }}</p>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock content %}

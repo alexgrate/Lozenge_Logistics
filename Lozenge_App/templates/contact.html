@@ -1,0 +1,126 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}    
+    <div class="contact-main">
+        <section class="contact-header">
+            <div>
+                <h3>ENQUIRIES</h3>
+                <h1>Get answers to your questions</h1>
+                <div class="contact-header-img">
+                    <img src="{% static 'images/contacts_02.jpg' %}" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-main reveal">
+            <div class="contact-main-container">
+                <div class="contact-main-box">
+                    <div class="contact-main-content">
+                        <h1>GET IN TOUCH</h1>
+                        <p>We are always ready to answer your questions.</p>
+                        <div>
+                            <p>Phone:</p>
+                            <a href="https://wa.me/+2349067916604">+2349067916604</a>
+                        </div>
+
+                        <div>
+                            <p>Send Email:</p>
+                            <span>lozengesconsults@gmail.com</span>
+                        </div>
+
+                        <div>
+                            <p>Address:</p>
+                            <span>Road 17, House 34, Diamond Estate, Isheri, Egbeda, Lagos, Nigeria</span>
+                        </div>
+
+                        <div>
+                            <p>At Lozenge Cargo, we value your feedback and are committed to providing exceptional customer service. We encourage you to interact with us and let us know how we can better serve your logistics needs.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-main-content">
+                        <h1>Interact with us </h1>
+                        <form method="POST" action="">
+                            {% csrf_token %}
+                            <fieldset>
+                                <legend>Please send us your inquiries. We will get in touch shortly.</legend>
+                                <div class="contact-group-box">
+                                    <div class="contact-group-container">
+                                        <div class="contact-group">
+                                            {% if form.first_name.errors %}
+                                                {{ form.first_name }}
+                                                <div>
+                                                    {% for error in form.first_name.errors %}
+                                                        {{ error }}
+                                                    {% endfor %}
+                                                </div>
+                                            {% else %}
+                                                {{ form.first_name }}
+                                            {% endif %}
+                                        </div>
+                                        <div class="contact-group">
+                                            {% if form.last_name.errors %}
+                                                {{ form.last_name }}
+                                                <div>
+                                                    {% for error in form.last_name.errors %}
+                                                        {{ error }}
+                                                    {% endfor %}
+                                                </div>
+                                            {% else %}
+                                                {{ form.last_name }}
+                                            {% endif %}
+                                        </div>
+                                        <div class="contact-group">
+                                            {% if form.email.errors %}
+                                                {{ form.email }}
+                                                <div>
+                                                    {% for error in form.email.errors %}
+                                                        {{ error }}
+                                                    {% endfor %}
+                                                </div>
+                                            {% else %}
+                                                {{ form.email }}
+                                            {% endif %}
+                                        </div>
+                                        <div class="contact-group">
+                                            {% if form.phone_number.errors %}
+                                                {{ form.phone_number }}
+                                                <div>
+                                                    {% for error in form.phone_number.errors %}
+                                                        {{ error }}
+                                                    {% endfor %}
+                                                </div>
+                                            {% else %}
+                                                {{ form.phone_number }}
+                                            {% endif %}
+                                        </div>
+                                        <div class="contact-group">
+                                            {% if form.message.errors %}
+                                                {{ form.message }}
+                                                <div>
+                                                    {% for error in form.message.errors %}
+                                                        {{ error }}
+                                                    {% endfor %}
+                                                </div>
+                                            {% else %}
+                                                {{ form.message }}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <button type="submit" class="contact-submitbtn">SEND MESSAGE</button>
+                        </form>
+                        <div>
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <p class="contact-alert">{{ message }}</p>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock content %}
