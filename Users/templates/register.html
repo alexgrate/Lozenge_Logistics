@@ -18,12 +18,54 @@
                         <form method="POST" action="">
                             {% csrf_token %}
                             <div class="row">
-                                {{ form.as_p }}
+                                <i class="fas fa-user"></i>
+                                {% if form.username.errors %}
+                                {{ form.username }}
+                                    {% for error in form.username.errors%}
+                                        {{ error }}
+                                    {% endfor %}
+                                {% else %}
+                                    {{ form.username }}
+                                {% endif %}
+                            </div>
+
+                            <div class="row">
+                                <i class="fas fa-envelope"></i>
+                                {% if form.email.errors %}
+                                {{ form.email }}
+                                    {% for error in form.email.errors%}
+                                        {{ error }}
+                                    {% endfor %}
+                                {% else %}
+                                    {{ form.email }}
+                                {% endif %}
+                            </div>
+                            <div class="row">
+                                <i class="fas fa-lock"></i>
+                                {% if form.password1.errors %}
+                                {{ form.password1 }}
+                                    {% for error in form.password1.errors%}
+                                        {{ error }}
+                                    {% endfor %}
+                                {% else %}
+                                    {{ form.password1 }}
+                                {% endif %}
+                            </div>
+                            <div class="row">
+                                <i class="fas fa-lock"></i>
+                                {% if form.password2.errors %}
+                                {{ form.password2 }}
+                                    {% for error in form.password2.errors%}
+                                        {{ error }}
+                                    {% endfor %}
+                                {% else %}
+                                    {{ form.password2 }}
+                                {% endif %}
                             </div>
                             <div class="row button">
-                                <button class="btn btn-outline-info">Sign Up</button>
+                                <input type="submit" value="Sign Up">
                             </div>
-                            <div class="signup-link">Already Have An Account? <a href="{% url 'login' %}">Sign In</a></div>
+                            <div class="signup-link">Already Have An Account? <a href="{% url 'login' %}">SignIn Now</a></div>
                         </form>
                     </div>
                 </div>

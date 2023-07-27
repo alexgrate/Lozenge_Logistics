@@ -46,26 +46,36 @@
 }
 
 .wrapper form{
-    padding: 25px 20px 25px 30px;
+    padding: 30px 20px 25px 20px;
 }
 
 .wrapper form .row{
-    height: auto;
+    height: 45px;
     /* background: whitesmoke; */
     margin-bottom: 20px;
     position: relative;
 }
 
+.wrapper form .login_row{
+    height: auto;
+    background: none;
+}
+
 .wrapper form .row input{
-    height: 2.5rem;
+    height: 100%;
     width: 100%;
     outline: none;
-    padding-left: 10px;
-    margin: 0.5rem 0;
+    padding-left: 60px;
     border-radius: 5px;
     border:  1px solid lightgray;
     font-size: 16px;
     transition: all 0.3s ease;
+}
+
+.wrapper form .login_row input{
+    height: 2.5rem;
+    padding-left: 10px;
+    margin: 0.5rem 0;
 }
 
 .wrapper form .row .small{
@@ -74,9 +84,8 @@
 
 form .row input:focus{
     border-color: #cf3b05;
-    box-shadow: inset 0px  0px 2px 2px #ff4400;
+    box-shadow: inset 0px  0px 2px 2px #cf3b05;
 }
-
 
 .wrapper form .row i{
     position: absolute;
