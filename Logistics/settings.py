@@ -120,6 +120,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATIC_ROOT = '/home/dominion/Lozenge_Logistics/static'
+
 LOGIN_REDIRECT_URL = 'Lozenge-home'
 
 # Default primary key field type
