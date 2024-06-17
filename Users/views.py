@@ -17,6 +17,7 @@ def register(request):
     return render(request, 'register.html', {'title': 'SignUp', 'form': form})
 
 
+
 def logout_user(request):
     logout(request)
     messages.success(request, ('You Were Logged Out!'))
@@ -41,7 +42,7 @@ def Booking(request):
             Reciever_City = form.cleaned_data['Reciever_City']
             Reciever_State = form.cleaned_data['Reciever_State']
             Reciever_Countries = form.cleaned_data['Reciever_Countries']
-            Product_List = form.cleaned_data['Product_Liste']
+            Product_List = form.cleaned_data['Product_List']
             Insurance_opt = form.cleaned_data['Insurance_opt']
             
             send_mail(
