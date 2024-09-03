@@ -120,7 +120,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATIC_ROOT = '/home/dominion/Lozenge_Logistics/static'
+STATIC_ROOT = '/home/alexdominion/Lozenge_Logistics/static'
 
 LOGIN_REDIRECT_URL = 'Lozenge-home'
 
